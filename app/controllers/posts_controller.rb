@@ -7,7 +7,7 @@ class PostsController < ApplicationController
 		@post = Post.new(params[:post])
 
 		if @post.save
-			redirect_to posts_path :notice => "Post successfully created"
+			redirect_to posts_path :notice => "Your Post was created"
 		else
 			render new
 		end
@@ -28,7 +28,7 @@ class PostsController < ApplicationController
 	def update
 		@post = Post.find(params[:id])
 		if @post.update_attributes(params[:post])
-			redirect_to posts_path :notice => "Post successfully edited"
+			redirect_to posts_path :notice => "Your Post was updated"
 		else
 			render edit
 		end
